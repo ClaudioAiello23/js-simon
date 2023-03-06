@@ -16,9 +16,15 @@ function addClass (){
    printNumber.classList.add('hidden_number');
 }
 
-// Funzione diretta che aggiunge la richiesta di un numero all'utente
+/* Funzione diretta che aggiunge la richiesta di un numero all'utente
+per 5 volte e aggiunge i numeri in un Array*/
 function userPrompt (){
-    prompt('inserisci il numero');
+    for (let i = 1; i <= 5; i++) {
+        let userNumber = prompt('inserisci il numero');
+        console.log(userNumber);
+        userArray.push(userNumber);
+        console.log(userArray);
+    }
  }
 
 // TIMING FUNCTION - Funzione che dopo 30 secondi attiva la classe Hidden
@@ -40,6 +46,9 @@ const randomNumbers = [];
 
 // Inizializzo la variabile per il singolo numero Random
 let randomSingle;
+
+// Creo l'array vuoto dei numeri scritti dall'utente
+const userArray = [];
 
 // Creo ciclo FOR per la generazione di 5 numeri casuali
 for (let i = 0; i < 5; i++) {
