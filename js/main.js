@@ -11,6 +11,23 @@ function genRandomNum (){
    return element;
 }
 
+// Funzione diretta che aggiunge la classe Hidden
+function addClass (){
+   printNumber.classList.add('hidden_number');
+}
+
+// Funzione diretta che aggiunge la richiesta di un numero all'utente
+function userPrompt (){
+    prompt('inserisci il numero');
+ }
+
+// TIMING FUNCTION - Funzione che dopo 30 secondi attiva la classe Hidden
+setTimeout (addClass, 30000);
+
+
+// TIMING FUNCTION - Funzione che dopo 31 secondi mostra il prompt di richiesta numeri all'utente
+setTimeout (userPrompt, 32000);
+
 
 /*
 **********************************
@@ -40,6 +57,4 @@ for (let i = 0; i < 5; i++) {
 
 let printNumber = document.querySelector('.container');
 printNumber.innerHTML+=`<div>${randomNumbers[0]} - ${randomNumbers[1]} - ${randomNumbers[2]} - ${randomNumbers[3]} - ${randomNumbers[4]}</div>`
-
-
-
+;
