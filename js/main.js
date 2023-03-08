@@ -46,7 +46,7 @@ function gameNumber(){
 
     setTimeout(function(){
         printNumberArea = removeHtmlElement('container');
-    }, 10000);
+    }, 20000);
 
     /* Ciclo FOR che aggiunge la richiesta di un numero all'utente
     per 5 volte e aggiunge i numeri in un Array*/
@@ -63,13 +63,21 @@ function gameNumber(){
         /* Variabile per stampare nel DOM i numeri inseriti dall'utente*/
         let printUserNumber = document.getElementById('container');
         printUserNumber.innerHTML += `<h2>NUMERI UTENTE: </h2><div>${userArray[0]} - ${userArray[1]} - ${userArray[2]} - ${userArray[3]} - ${userArray[4]}</div>`;
-        // si potrebbe fare uno Switch con i casi: tutti indovinati, indovinati > 0 e > 5 e indovinati 0
-        if (finalArray.length > 0) {
-            printUserNumber.innerHTML +=`<div>Quantità numeri indovinati: ${finalArray.length}</div><div>Numeri indovinati: ${finalArray}</div>`;
-        } else{
-            printUserNumber.innerHTML +=`<div>Numeri indovinati: ZERO ! Sei una schiappa!!!! </div>`;
+        //Crare uno Switch con i casi: tutti indovinati, indovinati > 0 e > 5 e indovinati 0
+        switch (true) {
+            case finalArray.length > 0 && finalArray.length < 5:
+                printUserNumber.innerHTML +=`<div>Quantità numeri indovinati: ${finalArray.length}</div><div>Numeri indovinati: ${finalArray}</div>`;
+                break;
+
+            case finalArray.length === 5:
+                printUserNumber.innerHTML +=`<div>Quantità numeri indovinati: ${finalArray.length}</div><div>Complimenti! li hai indovinati tutti !</div>`;
+                break;
+        
+            default:
+                printUserNumber.innerHTML +=`<div>Quantità numeri indovinati: ${finalArray.length}</div><div>Non ne hai azzeccato uno, sei una schiappa!</div>`;
+                break;
         }
-    }, 12000);
+    }, 22000);
 
 }
  
